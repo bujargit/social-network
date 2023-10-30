@@ -7,21 +7,14 @@ const morgan = require("morgan");
 require("dotenv").config();
 
 const app = express();
-const { createServer } = require("http");
-const { Server } = require("socket.io");
-const httpServer = createServer(app);
-const io = new Server(httpServer, {
+const http = require("http").createServer(app);
+const io = require("socket.io")(http, {
   path: "/socket.io",
   cors: {
-    origin: "*",
+    origin: process.env.CLIENT_URL,
     methods: ["GET", "POST"],
-    // allowedHeaders: ["Content-type"],
+    allowedHeaders: ["Content-type"],
   },
-});
-
-io.on("connection", (socket) => {
-  console.log("We are live and connected");
-  console.log(socket.id);
 });
 
 // db
@@ -40,7 +33,7 @@ app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: [process.env.CLIENT_URL],
   })
 );
 
@@ -80,8 +73,4 @@ io.on("connect", (socket) => {
 
 const port = process.env.PORT || 8000;
 
-httpServer.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
-
-// http.listen(port, () => console.log(`Server running on port ${port}`));
+http.listen(port, () => console.log(`Server running on port ${port}`));
