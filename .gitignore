@@ -7,7 +7,6 @@ client/node_modules/
 
 # testing
 /coverage
-functions
 
 # production
 /build
