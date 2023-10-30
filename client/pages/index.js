@@ -9,10 +9,10 @@ import io from "socket.io-client";
 
 const socket = io(
   process.env.NEXT_PUBLIC_SOCKETIO,
-  { path: "/socket.io" },
-  {
-    reconnection: true,
-  }
+  // { path: "/socket.io" },
+  // {
+  //   reconnection: true,
+  // }
 );
 
 const Home = ({ posts }) => {

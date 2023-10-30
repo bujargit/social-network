@@ -67,7 +67,7 @@ readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 io.on("connect", (socket) => {
   socket.on("new-post", (newPost) => {
     // console.log("socketIo new post => ", newPost);
-    socket.broadcast.emit("new-post", newPost);
+    io.emit("new-post", newPost);
   });
 });
 
