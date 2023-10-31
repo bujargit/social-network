@@ -32,9 +32,11 @@ mongoose
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
-  cors({
-    origin: [process.env.CLIENT_URL],
-  })
+  cors(
+  //   {
+  //   origin: [process.env.CLIENT_URL],
+  // }
+  )
 );
 
 // Enable CORS for all routes
@@ -64,7 +66,7 @@ readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 //   });
 // });
 
-io.on("connect", (socket) => {
+io.on("connection", (socket) => {
   socket.on("new-post", (newPost) => {
     // console.log("socketIo new post => ", newPost);
     io.emit("new-post", newPost);

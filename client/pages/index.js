@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context";
 import ParallaxBG from "../components/cards/ParallaxBG";
 import axios from "axios";
@@ -7,21 +7,23 @@ import Head from "next/head";
 import Link from "next/link";
 import io from "socket.io-client";
 
-const socket = io(
-  process.env.NEXT_PUBLIC_SOCKETIO,
-  // { path: "/socket.io" },
-  // {
-  //   reconnection: true,
-  // }
-);
+const socket = io(process.env.NEXT_PUBLIC_SOCKETIO, {
+  reconnection: true,
+});
 
 const Home = ({ posts }) => {
   const [state, setState] = useContext(UserContext);
 
   const [newsFeed, setNewsFeed] = useState([]);
 
+  // useEffect(() => {
+  //   // console.log("SOCKETIO ON JOIN", socket);
+  //   socket.on("receive-message", (newMessage) => {
+  //     alert(newMessage);
+  //   });
+  // }, []);
+
   useEffect(() => {
-    // console.log("SocketIo On Join", socket);
     socket.on("new-post", (newPost) => {
       setNewsFeed([newPost, ...posts]);
     });
@@ -58,10 +60,10 @@ const Home = ({ posts }) => {
       <div className="container">
         {/* <button
           onClick={() => {
-            socket.emit("send-message", "This is Ryan !!!");
+            socket.emit("send-message", "This is ryan!!!");
           }}
         >
-          Send Message
+          Send message
         </button> */}
         <div className="row pt-5">
           {collection.map((post) => (
