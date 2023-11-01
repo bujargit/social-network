@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import http from 'http';
 import cors from "cors";
 import { readdirSync } from "fs";
 import { Server } from "socket.io";
@@ -87,4 +88,4 @@ io.on("connection", (socket) => {
 
 const port = process.env.PORT || 8000;
 
-http.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
