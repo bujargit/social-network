@@ -2,20 +2,29 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { readdirSync } from "fs";
+import { Server } from "socket.io";
 
 const morgan = require("morgan");
 require("dotenv").config();
 
 const app = express();
-const http = require("http").createServer(app);
-const io = require("socket.io")(http, {
+// const http = require("http").createServer(app);
+const server = http.createServer(app);
+const io = new Server(server, {
   cors: {
-    // origin: "http://localhost:3000",
-    origin: "https://soc-net123.netlify.app/",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-type"],
+    origin: "*",
+    methods: ["GET", "POST"]
   },
-});
+  maxHttpBufferSize: 1e8
+})
+// const io = require("socket.io")(http, {
+//   cors: {
+//     // origin: "http://localhost:3000",
+//     origin: "https://soc-net123.netlify.app/",
+//     methods: ["GET", "POST"],
+//     allowedHeaders: ["Content-type"],
+//   },
+// });
 
 // db
 mongoose

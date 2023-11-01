@@ -7,9 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 import io from "socket.io-client";
 
-const socket = io(process.env.NEXT_PUBLIC_SOCKETIO, {
-  reconnection: true,
-});
+const socket = io.connect(process.env.NEXT_PUBLIC_SOCKETIO);
 
 const Home = ({ posts }) => {
   const [state, setState] = useContext(UserContext);
