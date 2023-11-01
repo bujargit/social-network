@@ -32,10 +32,11 @@ mongoose
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
-  cors({
-    origin: [process.env.CLIENT_URL],
-    methods: ["GET", "POST"]
-  })
+  cors()
+  // {
+  //   origin: [process.env.CLIENT_URL],
+  //   methods: ["GET", "POST"]
+  // }
 );
 
 // Enable CORS for all routes
