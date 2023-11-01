@@ -12,8 +12,8 @@ const io = require("socket.io")(http, {
   path: "/socket.io",
   cors: {
     origin: process.env.CLIENT_URL,
-    // methods: ["GET", "POST"],
-    // allowedHeaders: ["Content-type"],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-type"],
   },
 });
 
