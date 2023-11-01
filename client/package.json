@@ -26,5 +26,8 @@
     "react-render-html": "^0.6.0",
     "react-toastify": "^7.0.4",
     "socket.io-client": "^4.7.2"
+  },
+  "engines": {
+    "node": "16"
   }
 }
