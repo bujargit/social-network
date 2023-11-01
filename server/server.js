@@ -34,6 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [process.env.CLIENT_URL],
+    methods: ["GET", "POST"]
   })
 );
 
