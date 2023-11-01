@@ -7,7 +7,10 @@ import Head from "next/head";
 import Link from "next/link";
 import io from "socket.io-client";
 
-const socket = io.connect(process.env.NEXT_PUBLIC_SOCKETIO);
+const socket = io.connect(
+  { path: "/socket.io" },
+  process.env.NEXT_PUBLIC_SOCKETIO
+);
 
 const Home = ({ posts }) => {
   const [state, setState] = useContext(UserContext);
