@@ -9,12 +9,12 @@ require("dotenv").config();
 const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http, {
-  path: "/socket.io",
-  // cors: {
-  //   origin: process.env.CLIENT_URL,
-  //   methods: ["GET", "POST"],
-  //   allowedHeaders: ["Content-type"],
-  // },
+  cors: {
+    // origin: "http://localhost:3000",
+    origin: "https://soc-net123.netlify.app/",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-type"],
+  },
 });
 
 // db
@@ -32,10 +32,9 @@ mongoose
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
-  cors()
-  //   {
-  //   origin: [process.env.CLIENT_URL],
-  // }
+  cors({
+    origin: [process.env.CLIENT_URL],
+  })
 );
 
 // Enable CORS for all routes
