@@ -36,13 +36,13 @@ app.use(
   })
 );
 
-// // Enable CORS for all routes
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", process.env.CLIENT_URL);
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
+// Enable CORS for all routes
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://soc-net123.netlify.app/");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_URL);
