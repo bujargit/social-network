@@ -1,6 +1,0 @@
-[build]
-  command = "npm run build $NPM_FLAGS"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
