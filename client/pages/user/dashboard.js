@@ -13,10 +13,14 @@ import CommentForm from "../../components/forms/CommentForm";
 import Search from "../../components/Search";
 import io from "socket.io-client";
 
-const socket = io.connect(
-  { path: "/socket.io" },
-  process.env.NEXT_PUBLIC_SOCKETIO
-);
+// const socket = io.connect(
+//   { path: "/socket.io" },
+//   process.env.NEXT_PUBLIC_SOCKETIO
+// );
+
+const socket = io(process.env.NEXT_PUBLIC_SOCKETIO, {
+  reconnection: true,
+});
 
 const Home = () => {
   const [state, setState] = useContext(UserContext);
