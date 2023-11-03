@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 import { UserContext } from "../context";
 
 const Login = () => {
-  const [email, setEmail] = useState("bujar@gmail.com");
-  const [password, setPassword] = useState("bbbbbb");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const [state, setState] = useContext(UserContext);
