@@ -1,4 +1,4 @@
-const ParallaxBG = ({ url, children = "MERNCAMP" }) => {
+const ParallaxBG = ({ url, children = "FaceTime" }) => {
   return (
     <div
       className="container-fluid"
@@ -12,7 +12,7 @@ const ParallaxBG = ({ url, children = "MERNCAMP" }) => {
         display: "block",
       }}
     >
-      <h1 className="display-1 font-weight-bold text-center">{children}</h1>
+      <h1 className="display-1 text-white font-weight-bold text-center">{children}</h1>
     </div>
   );
 };

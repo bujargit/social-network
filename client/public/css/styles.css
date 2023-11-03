@@ -1,3 +1,6 @@
+body {
+  background-color: #f0f2f5 !important;
+}
 .bg-default-image {
   background-image: url("/images/default.jpg");
   background-size: 100%;
@@ -17,15 +20,25 @@
   cursor: pointer;
 }
 
-/* .main-nav {
-  position: relative;
+.main-nav {
+  min-height: 50px;
+}
+.main-nav .nav-link {
+  float: left;
 }
 
 .main-nav .dropdown {
-  position: static;
+  float: right;
 }
-.main-nav .dropdown-menu {  
-  right: 0px !important;
-  top: 7px !important;
+
+/* .main-nav {
+  position: relative;
+}
+*/
+
+.main-nav .dropdown-menu {
   inset: unset !important;
-} */
+  transform: none !important;
+  right: 0px !important;
+  top: 45px !important;
+}

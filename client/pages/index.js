@@ -47,7 +47,7 @@ const Home = ({ posts }) => {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="MERNCAMP" />
-      <meta property="og:url" content="http://merncamp.com" />
+      <meta property="og:url" content="http://soc-net123.netlify.app" />
       <meta
         property="og:image:secure_url"
         content="http://merncamp.com/images/default.jpg"
