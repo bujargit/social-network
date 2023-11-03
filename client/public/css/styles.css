@@ -16,3 +16,16 @@
 .pointer {
   cursor: pointer;
 }
+
+/* .main-nav {
+  position: relative;
+}
+
+.main-nav .dropdown {
+  position: static;
+}
+.main-nav .dropdown-menu {  
+  right: 0px !important;
+  top: 7px !important;
+  inset: unset !important;
+} */
