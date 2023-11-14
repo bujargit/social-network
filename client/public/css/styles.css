@@ -31,10 +31,9 @@ body {
   float: right;
 }
 
-/* .main-nav {
-  position: relative;
+.post-delete {
+  cursor: pointer;
 }
-*/
 
 .main-nav .dropdown-menu {
   inset: unset !important;

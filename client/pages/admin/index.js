@@ -47,7 +47,7 @@ const Admin = () => {
       <div className="container-fluid">
         <div className="row py-5 text-light bg-default-image">
           <div className="col text-center">
-            <h1>ADMIN</h1>
+            <h1 className="text-white">Admin Page</h1>
           </div>
         </div>
         <div className="row py-4">
@@ -58,9 +58,9 @@ const Admin = () => {
                   <div>{renderHTML(post.content)}</div>
                   <div
                     onClick={() => handleDelete(post)}
-                    className="text-danger"
+                    className="text-danger post-delete"
                   >
-                    Delete
+                    Delete Post
                   </div>
                 </div>
               ))}
