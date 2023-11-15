@@ -8,8 +8,8 @@ import { UserContext } from "../context";
 import { useRouter } from "next/router";
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState("ryan@gmail.com");
-  const [newPassword, setNewPassword] = useState("rrrrrr");
+  const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [secret, setSecret] = useState("");
   const [ok, setOk] = useState(false);
   const [loading, setLoading] = useState(false);
