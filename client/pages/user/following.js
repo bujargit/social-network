@@ -54,36 +54,40 @@ const Following = () => {
   };
 
   return (
-    <div className="row col-md-6 offset-md-3">
-      {/* <pre>{JSON.stringify(people, null, 4)}</pre> */}
-      <List
-        itemLayout="horizontal"
-        dataSource={people}
-        renderItem={(user) => (
-          <List.Item>
-            <List.Item.Meta
-              avatar={<Avatar src={imageSource(user)} />}
-              title={
-                <div className="d-flex justify-content-between">
-                  {user.username}{" "}
-                  <span
-                    onClick={() => handleUnfollow(user)}
-                    className="text-primary pointer"
-                  >
-                    Unfollow
-                  </span>
-                </div>
-              }
-            />
-          </List.Item>
-        )}
-      />
+    <div className="container">
+      <div className="row">
+        <div className="offset-md-3 col-md-6 offset-md-3">
+          {/* <pre>{JSON.stringify(people, null, 4)}</pre> */}
+          <List
+            itemLayout="horizontal"
+            dataSource={people}
+            renderItem={(user) => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={<Avatar src={imageSource(user)} />}
+                  title={
+                    <div className="d-flex justify-content-between">
+                      {user.username}{" "}
+                      <span
+                        onClick={() => handleUnfollow(user)}
+                        className="text-primary pointer"
+                      >
+                        Unfollow
+                      </span>
+                    </div>
+                  }
+                />
+              </List.Item>
+            )}
+          />
 
-      <Link href="/user/dashboard">
-        <a className="d-flex justify-content-center pt-5">
-          <RollbackOutlined />
-        </a>
-      </Link>
+          <Link href="/user/dashboard">
+            <a className="d-flex justify-content-center pt-5">
+              <RollbackOutlined />
+            </a>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

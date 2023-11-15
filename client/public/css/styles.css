@@ -41,3 +41,8 @@ body {
   right: 0px !important;
   top: 45px !important;
 }
+
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+}

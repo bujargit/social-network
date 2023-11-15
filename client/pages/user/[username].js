@@ -39,33 +39,38 @@ const Username = () => {
   };
 
   return (
-    <div className="row col-md-6 offset-md-3">
-      {/* <pre>{JSON.stringify(user, null, 4)}</pre> */}
+    <div className="container-fluid">
+      <div className="row col-md-6 offset-md-3">
+        {/* <pre>{JSON.stringify(user, null, 4)}</pre> */}
 
-      <div className="pt-5 pb-5">
-        <Card hoverable cover={<img src={imageSource(user)} alt={user.name} />}>
-          <Meta title={user.name} description={user.about} />
+        <div className="pt-5 pb-5">
+          <Card
+            hoverable
+            cover={<img src={imageSource(user)} alt={user.name} />}
+          >
+            <Meta title={user.name} description={user.about} />
 
-          <p className="pt-2 text-muted">
-            Joined {moment(user.createdAt).fromNow()}
-          </p>
+            <p className="pt-2 text-muted">
+              Joined {moment(user.createdAt).fromNow()}
+            </p>
 
-          <div className="d-flex justify-content-between">
-            <span className="btn btn-sm">
-              {user.followers && user.followers.length} Followers
-            </span>
+            <div className="d-flex justify-content-between">
+              <span className="btn btn-sm">
+                {user.followers && user.followers.length} Followers
+              </span>
 
-            <span className="btn btn-sm">
-              {user.following && user.following.length} Following
-            </span>
-          </div>
-        </Card>
+              <span className="btn btn-sm">
+                {user.following && user.following.length} Following
+              </span>
+            </div>
+          </Card>
 
-        <Link href="/user/dashboard">
-          <a className="d-flex justify-content-center pt-5">
-            <RollbackOutlined />
-          </a>
-        </Link>
+          <Link href="/user/dashboard">
+            <a className="d-flex justify-content-center pt-5">
+              <RollbackOutlined />
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );
